@@ -1,7 +1,6 @@
 """
 Toxic Comment Detection using Hugging Face Transformers
 Shows LLM Concepts: NER, Token Classification, Embeddings
-Based on: unitaryai/detoxify, GermEval 2021 research
 """
 
 import torch
@@ -203,3 +202,4 @@ class ToxicCommentDetector:
             })
         
         return pd.DataFrame(results)
+
