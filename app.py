@@ -424,13 +424,12 @@ with tab5:
     | Model | Accuracy | Training Data | Languages |
     |-------|----------|---------------|-----------|
     | original | 98.64% | 159K comments | English |
-    | unbiased | 93.74% | Bias-focused | English |
-    | multilingual | 92.11% | Multi-lang | 7 languages |
     
     
     """)
 
 st.markdown("---")
-st.markdown("<center>Built with ❤️ using Hugging Face Transformers | 🚨 Toxic Comment Detector</center>", 
+st.markdown("<center> 🚨 Toxic Comment Detector</center>", 
            unsafe_allow_html=True)
+
 
