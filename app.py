@@ -1,7 +1,5 @@
 """
 Toxic Comment Detection Web App
-Streamlit UI for Toxic Comment Detection
-Based on: GitHub projects + Hugging Face transformers
 """
 
 import streamlit as st
@@ -429,18 +427,10 @@ with tab5:
     | unbiased | 93.74% | Bias-focused | English |
     | multilingual | 92.11% | Multi-lang | 7 languages |
     
-    ### Citation
     
-    ```
-    @misc{Detoxify,
-      title={Detoxify},
-      author={Hanu, Laura and {Unitary team}},
-      howpublished={Github. https://github.com/unitaryai/detoxify},
-      year={2020}
-    }
-    ```
     """)
 
 st.markdown("---")
 st.markdown("<center>Built with ❤️ using Hugging Face Transformers | 🚨 Toxic Comment Detector</center>", 
            unsafe_allow_html=True)
+
