@@ -405,16 +405,10 @@ with tab4:
 
 # TAB 5: Settings
 with tab5:
-    st.subheader("Model Settings")
+    st.subheader("Model Info")
     
     st.markdown("""
-    ### Available Models
-    
-    #### Detoxify Models:
-    - **original**: BERT-base-uncased (98.64% AUC)
-    - **unbiased**: RoBERTa-base (93.74% AUC) - Better for identity bias
-    - **multilingual**: XLM-RoBERTa (92.11% AUC) - 7 languages
-    
+   
     #### Zero-Shot Classifier:
     - facebook/bart-large-mnli (current)
     
