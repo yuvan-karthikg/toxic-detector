@@ -106,7 +106,7 @@ with st.sidebar:
     st.markdown("## Model Stats")
     st.markdown("""
     **Detoxify Model:**
-    - 98.64% AUC on Jigsaw Challenge
+    - 98.64% AUC 
     - Trained on 159K Wikipedia comments
     - 6 toxicity categories
     
@@ -149,7 +149,7 @@ with tab1:
         st.rerun()
     
     if analyze_button and text_input.strip():
-        with st.spinner("🔄 Analyzing with LLM..."):
+        with st.spinner(" Analyzing with LLM..."):
             time.sleep(1)  # Show loading
             analysis = detector.full_analysis(text_input)
         
@@ -266,7 +266,6 @@ with tab1:
             **Detoxify Model (Primary):**
             - Architecture: BERT-base-uncased
             - Training Data: 159K Wikipedia comments
-            - Challenge: Jigsaw 2018
             - AUC Score: 98.64%
             - Categories: 6
             """)
