@@ -11,8 +11,8 @@ import time
 
 # Page config
 st.set_page_config(
-    page_title="🚨 Toxic Comment Detector",
-    page_icon="🚨",
+    page_title="Toxic Comment Detector",
+    page_icon="TCD",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -64,7 +64,7 @@ def load_detector():
     return ToxicCommentDetector()
 
 # Main UI
-st.markdown("# 🚨 AI Toxic Comment Detector")
+st.markdown("# AI Toxic Comment Detector")
 st.markdown("### Detect harmful, offensive, and toxic content using Hugging Face Transformers")
 
 # Load detector
@@ -72,7 +72,7 @@ detector = load_detector()
 
 # Sidebar
 with st.sidebar:
-    st.markdown("## 📋 Instructions")
+    st.markdown("## Instructions")
     st.markdown("""
     1. Enter text to analyze
     2. Click "Analyze" button
@@ -84,7 +84,7 @@ with st.sidebar:
     """)
     
     st.markdown("---")
-    st.markdown("## 🧠 LLM Concepts")
+    st.markdown("## LLM Concepts")
     st.markdown("""
     **Transformer Architecture:**
     - BERT-based model fine-tuned on 159K comments
@@ -103,7 +103,7 @@ with st.sidebar:
     """)
     
     st.markdown("---")
-    st.markdown("## 📊 Model Stats")
+    st.markdown("## Model Stats")
     st.markdown("""
     **Detoxify Model:**
     - 98.64% AUC on Jigsaw Challenge
@@ -117,11 +117,11 @@ with st.sidebar:
 
 # Main content
 tab1, tab2, tab3, tab4, tab5 = st.tabs([
-    "🔍 Single Analysis",
-    "📊 Batch Analysis",
-    "🎓 Learn",
-    "📈 Examples",
-    "⚙️ Settings"
+    "Single Analysis",
+    "Batch Analysis",
+    "Learn",
+    "Examples",
+    "Settings"
 ])
 
 # TAB 1: Single Analysis
@@ -155,7 +155,7 @@ with tab1:
         
         # Results header
         st.markdown("---")
-        st.subheader("📊 Analysis Results")
+        st.subheader("Analysis Results")
         
         # Final verdict
         verdict = analysis['final_verdict']
@@ -205,7 +205,7 @@ with tab1:
         col1, col2 = st.columns([1, 1])
         
         with col1:
-            st.markdown("#### 🎯 Toxicity Scores")
+            st.markdown("#### Toxicity Scores")
             detoxify_scores = analysis['detoxify_results']['scores']
             scores_df = pd.DataFrame([detoxify_scores]).T
             scores_df.columns = ['Score']
@@ -223,7 +223,7 @@ with tab1:
             st.plotly_chart(fig_bar, use_container_width=True)
         
         with col2:
-            st.markdown("#### 🔤 Text Features")
+            st.markdown("#### Text Features")
             features = analysis['text_features']
             
             feature_data = {
@@ -238,7 +238,7 @@ with tab1:
         
         # Tokenization analysis
         st.markdown("---")
-        st.markdown("#### 🔤 Tokenization Analysis (Shows: How Transformer Sees Text)")
+        st.markdown("#### Tokenization Analysis (Shows: How Transformer Sees Text)")
         
         tokenization = analysis['tokenization']
         tokens = tokenization['tokens']
@@ -257,7 +257,7 @@ with tab1:
         
         # Model info
         st.markdown("---")
-        st.markdown("#### 🤖 Model Information")
+        st.markdown("#### Model Information")
         
         col1, col2 = st.columns(2)
         
@@ -304,7 +304,7 @@ with tab2:
         height=200
     )
     
-    if st.button("📊 Analyze Batch", use_container_width=True, type="primary"):
+    if st.button("Analyze Batch", use_container_width=True, type="primary"):
         if batch_text.strip():
             texts = [t.strip() for t in batch_text.split('\n') if t.strip()]
             
@@ -331,7 +331,7 @@ with tab2:
 
 # TAB 3: Learn
 with tab3:
-    st.subheader("🎓 Understanding Toxic Comment Detection")
+    st.subheader("Understanding Toxic Comment Detection")
     
     st.markdown("""
     ### What is Toxic Comment Detection?
@@ -378,7 +378,7 @@ with tab3:
 
 # TAB 4: Examples
 with tab4:
-    st.subheader("📈 Example Analyses")
+    st.subheader("Example Analyses")
     
     examples = {
         "Non-Toxic (Positive)": "I absolutely love this! Great work everyone!",
@@ -390,7 +390,7 @@ with tab4:
     
     selected_example = st.selectbox("Select an example:", list(examples.keys()))
     
-    if st.button("🔍 Analyze Selected Example", use_container_width=True, type="primary"):
+    if st.button("Analyze Selected Example", use_container_width=True, type="primary"):
         example_text = examples[selected_example]
         
         with st.spinner("Analyzing..."):
@@ -406,7 +406,7 @@ with tab4:
 
 # TAB 5: Settings
 with tab5:
-    st.subheader("⚙️ Model Settings")
+    st.subheader("Model Settings")
     
     st.markdown("""
     ### Available Models
@@ -429,7 +429,7 @@ with tab5:
     """)
 
 st.markdown("---")
-st.markdown("<center> 🚨 Toxic Comment Detector</center>", 
+st.markdown("<center> Toxic Comment Detector</center>", 
            unsafe_allow_html=True)
 
 
