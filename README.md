@@ -1,12 +1,12 @@
-# 🛡️ Toxic Comment Detector
+# Toxic Comment Detector
 AI Toxic Comment Detection with Hugging Face
 
 ***
 An AI-powered content moderation system that automatically identifies and classifies toxic, harmful, or offensive comments using state-of-the-art transformer models and ensemble learning techniques. 
 
-**🚀 Live Demo:** [https://toxic-detector-4pic7qqpqwopsgx6prcr4r.streamlit.app/](https://toxic-detector-4pic7qqpqwopsgx6prcr4r.streamlit.app/)
+**Live Demo:** [https://toxic-detector-4pic7qqpqwopsgx6prcr4r.streamlit.app/](https://toxic-detector-4pic7qqpqwopsgx6prcr4r.streamlit.app/)
 
-## 📌 Overview
+## Overview
 
 This application detects toxic content in online comments using an ensemble approach that combines multiple machine learning models to achieve high accuracy with reduced false positives. The system can classify comments into 6 distinct toxicity categories and provides confidence scores for transparent decision-making. 
 
@@ -16,7 +16,7 @@ This application detects toxic content in online comments using an ensemble appr
 - **Online Forums**: Reddit, Stack Overflow community management
 - **Customer Service**: Flagging abusive messages for priority handling
 
-## ✨ Key Features
+## Key Features
 
 - **Multi-Label Classification**: Detects 6 toxicity categories simultaneously (toxic, severe_toxic, obscene, threat, insult, identity_hate) [ppl-ai-file-upload.s3.amazonaws]
 - **Ensemble Learning**: Combines Detoxify (BERT-based) and Zero-Shot Classification models for 98.64% AUC accuracy 
@@ -25,7 +25,7 @@ This application detects toxic content in online comments using an ensemble appr
 - **Interactive Visualizations**: Token-level analysis and confidence score charts
 - **Zero-Shot Capability**: Adaptable to new toxicity categories without retraining 
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ├── app.py              → Streamlit UI (Frontend)
@@ -34,7 +34,7 @@ This application detects toxic content in online comments using an ensemble appr
 ```
 
 **Flow**: User Input → Streamlit UI → ToxicCommentDetector → ML Models → Ensemble Results → Display
-## 🧠 Technical Implementation
+## Technical Implementation
 
 ### Models Used
 
@@ -68,7 +68,7 @@ ensemble_score = (detoxify_score + zeroshot_score) / 2
 is_toxic = ensemble_score > 0.5  # 50% threshold
 ```
 
-## 📊 Toxicity Categories
+## Toxicity Categories
 
 | Category | Definition | Example |
 |----------|------------|---------|
@@ -94,7 +94,7 @@ is_toxic = ensemble_score > 0.5  # 50% threshold
 3. Click "Analyze Batch"
 4. Download results as CSV for further analysis
 
-## 🔍 Analysis Features
+## Analysis Features
 
 ### 1. Tokenization Visualization
 Shows how transformers break down and interpret text at the token level: [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/61593299/4d0dd79f-6435-4919-88f2-2695eeaea8d1/llm-a2.pdf)
@@ -118,13 +118,13 @@ Provides scores from both Detoxify and Zero-Shot models with ensemble average [p
 - Bar charts showing confidence across all 6 categories
 - Color-coded visualizations (red intensity = higher toxicity)
 
-## 📈 Performance Metrics
+## Performance Metrics
 
 - **Accuracy**: 98.64% AUC score on Jigsaw Challenge dataset [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/61593299/4d0dd79f-6435-4919-88f2-2695eeaea8d1/llm-a2.pdf)
 - **Processing Speed**: 1-2 seconds per comment average
 - **Dataset**: Trained on 159,571 human-labeled Wikipedia comments [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/61593299/4d0dd79f-6435-4919-88f2-2695eeaea8d1/llm-a2.pdf)
 
-## 🎯 Future Enhancements
+## Future Enhancements
 
 - Multi-language support (currently English only)
 - User feedback loop for continuous improvement
@@ -133,7 +133,7 @@ Provides scores from both Detoxify and Zero-Shot models with ensemble average [p
 - Sarcasm detection specialized model
 - GPU acceleration for production-scale deployment
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 - **Frontend**: Streamlit
 - **ML Framework**: PyTorch, Transformers (Hugging Face)
@@ -141,7 +141,7 @@ Provides scores from both Detoxify and Zero-Shot models with ensemble average [p
 - **Visualization**: Plotly
 - **Deployment**: Streamlit Cloud
 
-## 📚 Learning Resources
+## Learning Resources
 
 This project demonstrates:
 - State-of-the-art NLP with transformers
@@ -150,7 +150,7 @@ This project demonstrates:
 - Interactive web UI development
 - Multi-label classification strategies
 
-## ⚠️ Limitations
+## Limitations
 
 - Sarcasm detection not reliably supported [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/61593299/4d0dd79f-6435-4919-88f2-2695eeaea8d1/llm-a2.pdf)
 - English-language focused (pre-trained models)
