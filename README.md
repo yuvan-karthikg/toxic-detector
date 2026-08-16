@@ -44,12 +44,12 @@ This application detects toxic content in online comments using an ensemble appr
    - Outputs 6 probability scores (0-1) for each toxicity category
 
 2. **Facebook BART-Large-MNLI (Zero-Shot Classifier)**
-   - Backup classifier requiring no training data for specific categories [ppl-ai-file-upload.s3.amazonaws]
+   - Backup classifier requiring no training data for specific categories 
    - Enables custom category definition on-the-fly
    - Provides alternative perspective to reduce false positives
 
 3. **BERT Tokenizer**
-   - Converts text into tokens for transformer processing [ppl-ai-file-upload.s3.amazonaws]
+   - Converts text into tokens for transformer processing 
    - Visualizes how AI "sees" and interprets input text
 
 ### Core ML Concepts
@@ -97,7 +97,7 @@ is_toxic = ensemble_score > 0.5  # 50% threshold
 ## Analysis Features
 
 ### 1. Tokenization Visualization
-Shows how transformers break down and interpret text at the token level: [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/61593299/4d0dd79f-6435-4919-88f2-2695eeaea8d1/llm-a2.pdf)
+Shows how transformers break down and interpret text at the token level: 
 ```
 Input: "unhappiness"
 Tokens: ['un', '##happiness']
@@ -105,25 +105,22 @@ Token IDs: [101, 1045, 5223, 2017, 102]
 ```
 
 ### 2. Text Feature Analysis
-Examines patterns associated with toxic content: [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/61593299/4d0dd79f-6435-4919-88f2-2695eeaea8d1/llm-a2.pdf)
-- Uppercase ratio (shouting indicator)
+Examines patterns associated with toxic content: 
 - Exclamation mark count (aggression)
 - Caps lock words (anger)
 - Character and word counts
 
 ### 3. Dual Model Scoring
-Provides scores from both Detoxify and Zero-Shot models with ensemble average [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/61593299/4d0dd79f-6435-4919-88f2-2695eeaea8d1/llm-a2.pdf)
-
+Provides scores from both Detoxify and Zero-Shot models with ensemble average 
 ### 4. Interactive Charts
 - Bar charts showing confidence across all 6 categories
 - Color-coded visualizations (red intensity = higher toxicity)
 
 ## Performance Metrics
 
-- **Accuracy**: 98.64% AUC score on Jigsaw Challenge dataset [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/61593299/4d0dd79f-6435-4919-88f2-2695eeaea8d1/llm-a2.pdf)
+- **Accuracy**: 98.64% AUC score on Jigsaw Challenge dataset
 - **Processing Speed**: 1-2 seconds per comment average
-- **Dataset**: Trained on 159,571 human-labeled Wikipedia comments [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/61593299/4d0dd79f-6435-4919-88f2-2695eeaea8d1/llm-a2.pdf)
-
+- **Dataset**: Trained on 159,571 human-labeled Wikipedia comments 
 ## Future Enhancements
 
 - Multi-language support (currently English only)
@@ -152,7 +149,7 @@ This project demonstrates:
 
 ## Limitations
 
-- Sarcasm detection not reliably supported [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/61593299/4d0dd79f-6435-4919-88f2-2695eeaea8d1/llm-a2.pdf)
+- Sarcasm detection not reliably supported
 - English-language focused (pre-trained models)
-- Requires human review for edge cases (recommendation: "FLAG FOR REVIEW" not auto-delete) [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/61593299/4d0dd79f-6435-4919-88f2-2695eeaea8d1/llm-a2.pdf)
+- Requires human review for edge cases (recommendation: "FLAG FOR REVIEW" not auto-delete) 
 - Cultural context understanding limited
